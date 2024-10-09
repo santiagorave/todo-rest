@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
-
 @RestController
 @RequestMapping("/tasks")
 @CrossOrigin(origins = {"http://localhost:5173/"})
@@ -48,7 +45,7 @@ public class TaskController {
 	
 	
 	@PatchMapping("/{id}/status")
-	public Task updateGoals(@PathVariable int id, @RequestBody boolean status) {
+	public Task patchTasks(@PathVariable int id, @RequestBody boolean status) {
 		return service.updateStatus(id,status);
 	}
 	
